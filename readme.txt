@@ -3,13 +3,14 @@ Contributors: cms2cms
 Tags: Html to wordpress, Html to wordpress mirgation, convert Html to wordpress, migrate Html to wordpress
 Requires at least: 3.0.0
 Tested up to: 3.8
-Stable tag: 3.0.4
+Stable tag: 3.1.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 This plugin will help to convert your static HTML website to WordPress in a matter of a few minutes.
 
 == Description ==
+
 This plugin will help to convert your static HTML website to WordPress in a matter of a few minutes. It migrates all pages and images from your HTML site totally automatedly, safely and accurately.
 
 **Note. CMS2CMS require generated *sitemap.xml* on your HTML site. Learn more how to generate sitemap.xml for free here - http://www.cms2cms.com/faqs/how-do-i-create-xml-sitemap-for-my-html-website/ **
@@ -38,6 +39,7 @@ For more details on automated conversion from HTML to WordPress, see here: http:
 
 
 == Installation ==
+
 1. Download the plugin zip file
 1. Extract plugin zip file to your PC
 1. Upload extracted file to wp-content/plugin directory
@@ -45,6 +47,7 @@ For more details on automated conversion from HTML to WordPress, see here: http:
 1. You’ll be redirected to CMS2CMS website in order to complete your migration
 
 == Frequently Asked Questions ==
+
 = How do I сreate XML sitemap for my HTML website? =
 You can easily create a sitemap for your site, here are the steps to follow:
 1. Use a free sitemap generator like these ones:
@@ -107,6 +110,7 @@ To fix it, you should either download the bridge again under the account you are
 Сontact us at support@cms2cms.com.
 
 == Screenshots ==
+
 1. /assets/screenshot-1.png
 2. /assets/screenshot-2.png
 3. /assets/screenshot-3.png
@@ -114,6 +118,7 @@ To fix it, you should either download the bridge again under the account you are
 5. /assets/screenshot-5.png
 
 == Changelog ==
+
 = 2.0.2 =
 * Bug fixes
 
