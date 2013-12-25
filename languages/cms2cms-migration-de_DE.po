@@ -1,0 +1,161 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CMS2CMS HTML to WordPress\n"
+"POT-Creation-Date: 2013-06-21 12:38+0200\n"
+"PO-Revision-Date: 2013-07-08 12:28+0200\n"
+"Last-Translator: cms2cms <dev@cms2cms.com>\n"
+"Language-Team: cms2cms <dev@cms2cms.com>\n"
+"Language: Deutsch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../cms2cms-wordpress-to-html.php:35
+msgid "HTML"
+msgstr ""
+
+#: ../cms2cms-wordpress-to-html.php:41
+msgid "WordPress"
+msgstr ""
+
+#: ../cms2cms-wordpress-to-html.php:49
+#, php-format
+msgid "CMS2CMS: %s to %s Migration"
+msgstr ""
+
+#: ../cms2cms-wordpress-to-html.php:56
+#, php-format
+msgid "%s to %s"
+msgstr ""
+
+#: ../cms2cms-wordpress-to-html.php:175
+msgid "Provided credentials are not correct: "
+msgstr "Anmeldeinformationen sind nicht korrekt:"
+
+#: ../ui.php:55
+#, php-format
+msgid "You are logged in CMS2CMS as %s"
+msgstr "Sie sind in CMS2CMS eingeloggt als %s"
+
+#: ../ui.php:65
+msgid "Logout"
+msgstr "Abmelden"
+
+#: ../ui.php:80
+msgid "Sign In"
+msgstr "Anmelden"
+
+#: ../ui.php:91
+msgid "Register CMS2CMS Account"
+msgstr "Registrieren Sie sich bei CMS2CMS"
+
+#: ../ui.php:94
+msgid "Login"
+msgstr "Anmelden"
+
+#: ../ui.php:97
+msgid "Forgot password?"
+msgstr "Passwort vergessen?"
+
+#: ../ui.php:105
+msgid "Email:"
+msgstr "E-Mail:"
+
+#: ../ui.php:113
+msgid "Password:"
+msgstr "Passwort:"
+
+#: ../ui.php:118
+msgid "Minimum 6 characters"
+msgstr "Mindestens 6 Zeichen"
+
+#: ../ui.php:133
+msgid "Continue"
+msgstr "Weiter"
+
+#: ../ui.php:144
+#, php-format
+msgid "Connect %s"
+msgstr "Verbinden %s"
+
+#: ../ui.php:157
+msgid "Download the Bridge file"
+msgstr "Laden Sie die Datei-Brücke"
+
+#: ../ui.php:161
+msgid "Unzip it"
+msgstr "Entpacken Sie es"
+
+#: ../ui.php:163
+msgid ""
+"Find the cms2cms.zip on your computer, right-click it and select Extract in "
+"the menu."
+msgstr ""
+"Finden Sie die cms2cms.zip auf Ihrem Computer, klicke mit der rechten "
+"Maustaste darauf und wählen Sie im Menü Extract."
+
+#: ../ui.php:168
+#, php-format
+msgid "Upload to the root folder on your %s website."
+msgstr "Laden Sie es auf den Root-Ordner auf %s Website"
+
+#: ../ui.php:171
+msgid "Watch the video"
+msgstr "Sehen Sie das Video"
+
+#: ../ui.php:175
+#, php-format
+msgid "Specify %s website URL"
+msgstr "Geben Sie% s Website URL"
+
+#: ../ui.php:181
+#, php-format
+msgid "http://your_%s_website.com/"
+msgstr ""
+
+#: ../ui.php:193
+msgid "Verify connection"
+msgstr "Überprüfen Sie die Verbindung"
+
+#: ../ui.php:200
+msgid "Configure and Start Migration"
+msgstr "Konfigurieren und Starten Migration"
+
+#: ../ui.php:207
+msgid ""
+"You'll be redirected to CMS2CMS application website in order to select your "
+"migration preferences and complete your migration."
+msgstr ""
+"Sie werden zu CMS2CMS Applikation Website umgeleitet um Ihre Migration "
+"Präferenzen auswählen und Ihre Migration vervollständigen."
+
+#: ../ui.php:216
+msgid "Start migration"
+msgstr "Migration starten"
+
+#: ../ui.php:227
+msgid ""
+"CMS2CMS.com is the one-of-its kind tool for fast, accurate and trouble-free "
+"website migration from HTML to WordPress. Just a few mouse clicks - and "
+"your HTML articles, categories, images, users, comments, internal links "
+"etc are safely delivered to the new WordPress website."
+msgstr ""
+"CMS2CMS.com ist das Werkzeug für schnelle, präzise und problemlose Migration "
+"von HTML auf WordPress. Nur ein paar Mausklicks - und Ihre HTML Artikel, "
+"Kategorien, Bilder, Benutzer, Kommentare, interne Links usw. auf die neue "
+"WordPress-Website migriert werden."
+
+#: ../ui.php:232
+msgid "See How it Works"
+msgstr "Sehen wie es funktioniert"
+
+#: ../ui.php:237
+msgid ""
+"Take a quick demo tour to get the idea about how your migration will be "
+"handled."
+msgstr "Siehe die Demo-Tour zu erfahren, wie die Migration funktioniert."
