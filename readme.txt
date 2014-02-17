@@ -3,7 +3,7 @@ Contributors: cms2cms
 Tags: Html to wordpress, Html to wordpress mirgation, convert Html to wordpress, migrate Html to wordpress
 Requires at least: 3.0.0
 Tested up to: 3.8
-Stable tag: 3.1.4
+Stable tag: 3.4.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ This plugin will help to convert your static HTML website to WordPress in a matt
 
 This plugin will help to convert your static HTML website to WordPress in a matter of a few minutes. It migrates all pages and images from your HTML site totally automatedly, safely and accurately.
 
-**Note. CMS2CMS require generated *sitemap.xml* on your HTML site. Learn more how to generate sitemap.xml for free here - http://www.cms2cms.com/faqs/how-do-i-create-xml-sitemap-for-my-html-website/ **
+**Note. CMS2CMS requires generated *sitemap.xml* on your HTML site. Learn more how to generate sitemap.xml for free here - http://www.cms2cms.com/faqs/how-do-i-create-xml-sitemap-for-my-html-website/ **
 
 *Supported WordPress versions:* 3.x (new software versions are constantly being added).
 

@@ -1,4 +1,4 @@
-(function(document, global, $, undefined){
+;(function(document, global, $, undefined){
 
         cms2cms = {
             authentication : '',
@@ -187,13 +187,72 @@
                 if ( !only_spinner ) {
                     form.slideDown('fast');
                 }
+            },
+
+            pushEvent : function (data){
+                if ( !cms2cms.getDisableEventCookie() ) {
+                    var form = $('.cms2cms_step_migration_run');
+                    var sourceType = form.find('input[name="sourceType"]').val();
+                    var targetType = form.find('input[name="targetType"]').val();
+
+                    try {
+                        mixpanel.track(data, {
+                            type: data,
+                            sourceType: sourceType,
+                            targetType: targetType
+                        });
+                    }
+                    catch(e){};
+                }
+
+            },
+
+            setDisableEventCookie : function(value) {
+                var date = new Date();
+                date.setTime(date.getTime()+(1000*24*60*60*1000));
+                var expires = "; expires="+date.toGMTString();
+
+                value = value || 0;
+
+//                var d = new Date();
+//                var value = d.getTime();
+
+                var domain = document.location.hostname;
+
+                document.cookie = "cms2cms_disable_events=" + value +
+                    "; expires=" + expires  +
+                    "; path=" + "/" +
+                    "; domain=" + domain;
+            },
+
+            getDisableEventCookie : function () {
+                var cookie = " " + document.cookie;
+                var search = " cms2cms_disable_events=";
+                var setStr = null;
+                var offset = 0;
+                var end = 0;
+                if (cookie.length > 0) {
+                    offset = cookie.indexOf(search);
+                    if (offset != -1) {
+                        offset += search.length;
+                        end = cookie.indexOf(";", offset);
+                        if (end == -1) {
+                            end = cookie.length;
+                        }
+                        setStr = unescape(cookie.substring(offset, end));
+                    }
+                }
+                return(setStr);
             }
+
+
 
     };
 
         $(document).ready(function(){
 
-            cms2cmsBlock = $('#cms2cms_accordeon');
+            var cms2cmsWrapper = $('.wrap.cms2cms-wrapper');
+            var cms2cmsBlock = $('#cms2cms_accordeon');
 
             // Change tabs Register and Login
             var signInTabs = cms2cmsBlock.find('a.nav-tab');
@@ -224,6 +283,36 @@
                 }
             });
 
+            // Send the event
+            cms2cmsWrapper.on('click', '[data-log-this]', function(e) {
+                cms2cms.pushEvent( $(this).data('log-this') );
+            });
+
+            // Disable events
+            cms2cmsWrapper.find('.stop-events').on('click', function(e) {
+                e.preventDefault();
+                cms2cms.setDisableEventCookie(1);
+                $('#cms2cms-allowed-events').hide();
+                $('#cms2cms-disabled-events').show();
+            });
+
+            // Allow events
+            cms2cmsWrapper.find('.allow-events').on('click', function(e) {
+                e.preventDefault();
+                cms2cms.setDisableEventCookie(0);
+                $('#cms2cms-allowed-events').show();
+                $('#cms2cms-disabled-events').hide();
+            });
+
+            // check if allowed events on load
+            if ( cms2cms.getDisableEventCookie() ) {
+                $('#cms2cms-allowed-events').show();
+                $('#cms2cms-disabled-events').hide();
+            }
+            else {
+                $('#cms2cms-allowed-events').hide();
+                $('#cms2cms-disabled-events').show();
+            }
 
         });
-    })(document, window, jQuery)
+    })(document, window, jQuery);
