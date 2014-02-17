@@ -3,7 +3,7 @@ Contributors: cms2cms
 Tags: Html to wordpress, Html to wordpress mirgation, convert Html to wordpress, migrate Html to wordpress
 Requires at least: 3.0.0
 Tested up to: 3.8
-Stable tag: 3.4.0
+Stable tag: 3.4.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
