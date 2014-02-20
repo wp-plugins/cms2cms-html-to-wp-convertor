@@ -23,6 +23,9 @@ $cms2cms_authentication = $dataProvider->getAuthData();
 $cms2cms_download_bridge = $viewProvider->getDownLoadBridgeUrl($cms2cms_authentication);
 
 $cms2cms_ajax_nonce = $viewProvider->getFormTempKey('cms2cms-ajax-security-check');
+
+$currentPluginUrl = plugin_dir_url( __FILE__ );
+
 ?>
 
 <div class="wrap cms2cms-wrapper">
