@@ -60,7 +60,7 @@
                         cms2cms.move( step_run );
                     }
                     else {
-                        cms2cms.show_error('Unknown error, please contact us http://cms2cms.com/contacts/');
+                        cms2cms.show_error('Unknown error, please contact us http://www.cms2cms.com/contacts/');
                     }
                 }
             },
@@ -284,7 +284,11 @@
             });
 
             // Send the event
-            cms2cmsWrapper.on('click', '[data-log-this]', function(e) {
+            cms2cmsWrapper.find('[data-log-this]').not('input,textarea,select').on('click', function(e) {
+                cms2cms.pushEvent( $(this).data('log-this') );
+            });
+
+            cms2cmsWrapper.on('blur', 'input[data-log-this], textarea[data-log-this], select[data-log-this]', function(e) {
                 cms2cms.pushEvent( $(this).data('log-this') );
             });
 

@@ -3,7 +3,7 @@ Contributors: cms2cms
 Tags: Html to wordpress, Html to wordpress mirgation, convert Html to wordpress, migrate Html to wordpress
 Requires at least: 3.0.0
 Tested up to: 3.8
-Stable tag: 3.6.0
+Stable tag: 3.6.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,10 @@ For more details on automated conversion from HTML to WordPress, see here: http:
 1. Set up custom URL structure for WordPress (it should be set before the migration for internal links to work correctly, if you change them after migration, site navigation will be broken).
 1. Install WordPress plugins supported by CMS2CMS (if you want to migrate metadata or image galleries).
 
+= Video =
+[youtube https://www.youtube.com/watch?v=u2o7s6aI-k4]
+
+More info: http://www.cms2cms.com/supported-cms/html-to-wordpress-migration/
 
 == Installation ==
 

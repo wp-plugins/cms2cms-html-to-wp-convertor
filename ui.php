@@ -117,7 +117,7 @@ $currentPluginUrl = plugin_dir_url( __FILE__ );
                             <input type="hidden" id="cms2cms-bridge-url" name="targetBridgePath" value="<?php echo $cms2cms_bridge_url; ?>"/>
                             <input type="hidden" id="cms2cms-access-key" name="accessKey" value="<?php echo $cms2cms_access_key; ?>"/>
                             <input type="hidden" name="termsOfService" value="1">
-                            <input type="hidden" name="peioaj" value="">
+                            <input type="hidden" name="jklsdfl" value="">
                             <div class="error_message"></div>
 
                             <button
