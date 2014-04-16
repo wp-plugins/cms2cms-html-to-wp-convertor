@@ -1,0 +1,75 @@
+    #cms2cms_accordeon {
+        width: 550px;
+    }
+    #cms2cms_accordeon li.cms2cms_accordeon_item {
+        border: none;
+        border-bottom: solid 1px #ddd;
+    }
+    #cms2cms_accordeon li.cms2cms_accordeon_item form {
+        margin-bottom: 20px;
+    }
+
+    #cms2cms_accordeon_item_id_2 form ,
+    #cms2cms_accordeon_item_id_3 form {
+        display: none;
+    }
+    #cms2cms_accordeon_item_id_1 form {
+        display: block;
+    }
+
+    #cms2cms_accordeon form button {
+        margin-top: 5px;
+    }
+
+    .cms2cms-plugin {
+      display: inline-block;
+      vertical-align: top;
+      width: 600px;
+    }
+
+    .cms2cms-plugin .form-table th {
+        width: 60px;
+    }
+
+    .cms2cms-plugin .error_message {
+        color: #f00;
+    }
+
+    .cms2cms-plugin .cms2cms-message {
+        width: 550px;
+        padding: 5px 10px;
+        overflow: hidden;
+        border: solid 1px #cd5;
+        margin: 10px 0 0 0;
+        font-size: 11px;
+        background: #de6;
+        color: #560;
+    }
+
+    .cms2cms-plugin .cms2cms-message span {
+        display: inline-block;
+        line-height: 24px;
+        vertical-align: middle;
+    }
+
+    .cms2cms-plugin .cms2cms-message .cms2cms-logout {
+        float: right;
+    }
+    .cms2cms-plugin .cms2cms-message .cms2cms-logout button {
+        font-size: 11px;
+    }
+
+    #cms2cms-description {
+      display: inline-block;
+      font-size: 11px;
+      margin-top: 80px;
+      vertical-align: top;
+      width: 300px;
+      color: #555;
+      padding: 15px 25px;
+      background: #eee;
+    }
+
+    .cms2cms-improve a {
+        color: #606060;
+    }
