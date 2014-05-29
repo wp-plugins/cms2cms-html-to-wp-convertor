@@ -2,7 +2,7 @@
 Contributors: cms2cms
 Tags: Html to wordpress, Html to wordpress mirgation, convert Html to wordpress, migrate Html to wordpress
 Requires at least: 3.0.0
-Tested up to: 3.8
+Tested up to: 3.9.1
 Stable tag: 3.6.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -141,3 +141,4 @@ To fix it, you should either download the bridge again under the account you are
 
 = 1.0 =
 * Initial commit
+
