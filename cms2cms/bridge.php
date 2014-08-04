@@ -3033,6 +3033,7 @@ class Bridge_Module_Cms_Joomla_Joomla17 extends Bridge_Module_Cms_Joomla_Joomla1
         $version = $this->getVersionConfigPath();
 
         define('_JEXEC', Bridge_Loader::getInstance()->getCurrentPath());
+        define('JPATH_PLATFORM', 1);
         ob_start();
         /** @noinspection PhpIncludeInspection */
         include ($config);
@@ -3165,7 +3166,7 @@ class Bridge_Module_Cms_Drupal_Drupal5 extends  Bridge_Module_Cms_Abstract
 
     public function getImageDir()
     {
-        return '';
+        return '/sites/default/files';
     }
 
     public function getSiteUrl()
@@ -3188,7 +3189,8 @@ class Bridge_Module_Cms_Drupal_Drupal5 extends  Bridge_Module_Cms_Abstract
     }
 
 }
-?><?php
+?>
+<?php
 class Bridge_Module_Cms_Drupal_Drupal6 extends  Bridge_Module_Cms_Drupal_Drupal5
 {
 

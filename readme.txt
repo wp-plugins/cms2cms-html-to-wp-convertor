@@ -1,6 +1,6 @@
 ﻿=== CMS2CMS: HTML to WordPress Convertor  ===
 Contributors: cms2cms
-Tags: Html to wordpress, Html to wordpress mirgation, convert Html to wordpress, migrate Html to wordpress
+Tags: Html to wordpress, Html to wordpress migration, convert Html to wordpress, migrate Html to wordpress, comments, posts, images, plugin
 Requires at least: 3.0.0
 Tested up to: 3.9.1
 Stable tag: 3.6.2
