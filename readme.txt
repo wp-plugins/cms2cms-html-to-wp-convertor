@@ -115,7 +115,7 @@ To fix it, you should either download the bridge again under the account you are
 Сontact us at support@cms2cms.com.
 
 = An unknown error occurred =
-Сontact us at support@cms2cms.com.
+Сontact us at support@cms2cms.com
 
 == Screenshots ==
 
