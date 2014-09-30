@@ -2,7 +2,7 @@
 Contributors: cms2cms
 Tags: html to wordpress, html to wordpress migration, convert html to wordpress, migrate html to wordpress, pages, images, plugin
 Requires at least: 3.0.0
-Tested up to: 3.9.1
+Tested up to: 4.0
 Stable tag: 3.6.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,9 +13,9 @@ This plugin will help to convert your static HTML website to WordPress in a matt
 
 This plugin will help to convert your static HTML website to WordPress in a matter of a few minutes. It migrates all pages and images from your HTML site totally automatedly, safely and accurately.
 
-**Note. CMS2CMS requires generated *sitemap.xml* on your HTML site. Learn more how to generate sitemap.xml for free here - http://www.cms2cms.com/faqs/how-do-i-create-xml-sitemap-for-my-html-website/ **
+**Note. CMS2CMS requires generated *sitemap.xml* on your HTML site. Learn more how to generate sitemap.xml for free here - http://www.cms2cms.com/faqs/how-do-i-create-xml-sitemap-for-my-html-website/?utm_source=HTML&utm_medium=FAQ-link&utm_campaign=WordPress_plugins **
 
-*Supported WordPress versions:* 3.x (new software versions are constantly being added).
+*Supported WordPress versions:* 4.x (new software versions are constantly being added).
 
 * *There is Free Demo available (migration of limited number of pages).*
 * *Full Migration starts from $9.*
@@ -31,7 +31,7 @@ This plugin will help to convert your static HTML website to WordPress in a matt
 
 This plugin installs the connection bridge on your WordPress, which is needed for data interaction between the HTML and WordPress websites. Upon activation, you’ll be redirected to CMS2CMS website in order to launch the conversion.
 
-For more details on automated conversion from HTML to WordPress, see here: http://www.cms2cms.com/supported-cms/html-to-wordpress-migration
+For more details on automated conversion from HTML to WordPress, see here: http://www.cms2cms.com/supported-cms/html-to-wordpress-migration/?utm_source=HTML&utm_medium=Link&utm_campaign=WordPress_plugins
 
 **Website design (styles, themes) isn’t migrated.**
 
@@ -44,7 +44,7 @@ For more details on automated conversion from HTML to WordPress, see here: http:
 = Video =
 [youtube https://www.youtube.com/watch?v=u2o7s6aI-k4]
 
-More info: http://www.cms2cms.com/supported-cms/html-to-wordpress-migration/
+More info: http://www.cms2cms.com/supported-cms/html-to-wordpress-migration/?utm_source=HTML&utm_medium=Link&utm_campaign=WordPress_plugins
 
 == Installation ==
 
