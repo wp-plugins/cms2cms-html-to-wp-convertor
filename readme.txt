@@ -13,7 +13,7 @@ This plugin will help to convert your static HTML website to WordPress in a matt
 
 This plugin will help to convert your static HTML website to WordPress in a matter of a few minutes. It migrates all pages and images from your HTML site totally automatedly, safely and accurately.
 
-**Learn more how to generate sitemap.xml for free here - http://www.cms2cms.com/faqs/how-do-i-create-xml-sitemap-for-my-html-website/?utm_source=HTML&utm_medium=FAQ-link&utm_campaign=WordPress_plugins **
+**Learn more how to generate sitemap.xml for free here - http://www.cms2cms.com/faqs/how-do-i-create-xml-sitemap-for-my-html-website/?utm_source=HTML&utm_medium=FAQ-link&utm_campaign=WordPress_plugins**
 
 *Supported WordPress versions:* 4.x (new software versions are constantly being added).
 
