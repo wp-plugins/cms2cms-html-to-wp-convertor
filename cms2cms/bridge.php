@@ -1,6 +1,6 @@
 <?php
 /**
- * This script is necessary setup automated data exchange 
+ * This script is necessary setup automated data exchange
  * between Your/Merchant site and CMS2CMS.
  *
  * Please carefully follow steps below.
@@ -12,7 +12,7 @@
  *
  * Installation Instructions
  * ===========================================================================
- * 1. Extract files from archive and upload "cms2cms" folder into your site 
+ * 1. Extract files from archive and upload "cms2cms" folder into your site
  *    root catalog via FTP.
  *    Example how to upload: "http://www.yourstore.com/cms2cms"
  * 2. Make "cms2cms" folder writable (set the 777 permissions, "write for all")
@@ -26,7 +26,7 @@
  * 3. Send email (support@cms2cms.com) to CMS2CMS support requesting help.
  * 4. Add feedback on http://cms2cms.betaeasy.com/
  *
- * Most likely you uploaded this script into wrong folder 
+ * Most likely you uploaded this script into wrong folder
  * or misstyped the site address.
  *
  * DISCLAIMER
@@ -600,10 +600,18 @@ class Bridge_Response_Memory
         }
 
         $this->closeResponseFile();
-        $responseData = gzencode($this->response);
-        header('Content-Encoding: gzip');
-        header('Content-Type: application/x-gzip');
-        header('Content-Length: ' . strlen($responseData));
+        if(function_exists('gzencode')){
+            $responseData = gzencode($this->response);
+            header('Content-Encoding: gzip');
+            header('Content-Type: application/x-gzip');
+            header('Content-Length: ' . strlen($responseData));
+        }
+        else{
+            $responseData = $this->response;
+            header('Content-Encoding: text');
+            header('Content-Type: application/plain-text');
+        }
+
         echo $responseData;
     }
 }
@@ -654,7 +662,7 @@ class Bridge_Response
         $obj->sendData($data);
     }
 
-   static function getFileHandler()
+    static function getFileHandler()
     {
         $obj = Bridge_Response::getInstance();
 
@@ -663,7 +671,7 @@ class Bridge_Response
         return $obj->hFile;
     }
 
-   static  function disable()
+    static  function disable()
     {
         Bridge_Response::getInstance('Bridge_Response_Null');
     }
@@ -716,7 +724,7 @@ class Bridge_Includer {
             $result = !empty($f);
         }
         */
-        
+
         if (! file_exists($fileName)){
             return false;
         }
@@ -876,7 +884,7 @@ class Bridge_Includer {
             }
             $content = str_replace($match, '//' . $match . "\n", $content);
         }
-        
+
         return $content;
     }
 
@@ -2852,6 +2860,10 @@ class Bridge_Module_Cms_WordPress_WordPress3 extends Bridge_Module_Cms_Abstract
 
 }
 
+
+//some wordpresses call this function at start, we declare it
+function add_filter($a, $b){}
+
 ?><?php
 abstract class Bridge_Module_Cms_Joomla_Base extends Bridge_Module_Cms_Abstract
 {
@@ -2872,6 +2884,26 @@ abstract class Bridge_Module_Cms_Joomla_Base extends Bridge_Module_Cms_Abstract
     public function getSiteUrl()
     {
         return '';
+    }
+
+    public function getAccessKey()
+    {
+        $db = Bridge_Db::getDbAdapter();
+        $sql = sprintf(
+            "
+                SELECT `option_value`
+                FROM `%s`
+                WHERE `option_name` = 'cms2cms-key'
+            ",
+            $this->prefixTable('cms2cms_options')
+        );
+
+        $key = $db->fetchOne($sql);
+        if (!$key) {
+            return null;
+        }
+
+        return $key;
     }
 }
 
@@ -3674,9 +3706,9 @@ class Bridge_Module_Cms_IPBoard_IPBoard extends Bridge_Module_Cms_Abstract
             $dbAdapter = Bridge_Db::getAdapter();
             $dbAdapter->connect($INFO['sql_host'], $INFO['sql_user'], $INFO['sql_pass'], $INFO['sql_database']);
             $config['version'] = $dbAdapter->fetchOne(
-                    'SELECT `app_version` from ' . $INFO['sql_tbl_prefix'] . 'core_applications
+                'SELECT `app_version` from ' . $INFO['sql_tbl_prefix'] . 'core_applications
                  WHERE `app_id` = \'1\''
-                );
+            );
 
         }
 
