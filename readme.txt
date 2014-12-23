@@ -44,6 +44,11 @@ For more details on automated conversion from HTML to WordPress, see here: http:
 = Video =
 [youtube https://www.youtube.com/watch?v=u2o7s6aI-k4]
 
+Our Support Team is available via phone, Live Chat and Email (Technical support) during the following hours:
+Phone support – 24 hours a day, Monday – Friday
+Live Chat support – 24 hours a day, Monday – Friday
+Technical support – from 11 am to 7 pm GMT +2, Monday – Friday
+
 More info: http://www.cms2cms.com/supported-cms/html-to-wordpress-migration/?utm_source=HTML&utm_medium=Link&utm_campaign=WordPress_plugins
 
 == Installation ==
