@@ -61,52 +61,47 @@ More info: http://www.cms2cms.com/supported-cms/html-to-wordpress-migration/?utm
 
 == Frequently Asked Questions ==
 
-= How do I сreate XML sitemap for my HTML website? =
-You can easily create a sitemap for your site, here are the steps to follow:
-1. Use a free sitemap generator like these ones:
- * http://www.xml-sitemaps.com/ (up to 500 pages)
- * http://www.web-site-map.com/xml_sitemap.php (number of pages unlimited). (Provide your website URL to generate your sitemap. We recommend to leave other parameters set by default).
-2. Download the sitemap file.
-3. Upload the file to your website.
-
 = Your website is unreachable =
-If your website cannot be reached, pay attention to the following points:
-1. Make sure your site is available online at the moment.
-2. It’s possible that your firewall blocks certain IP requests. Contact your system administrator or hosting provider support for details about this issue.
+<p>If your website cannot be reached, pay attention to the following points:
+Make sure your site is available online at the moment.
+It’s possible that your firewall blocks certain IP requests. Contact your system administrator or hosting provider support for details about this issue.</p>
 
 = Your server responds with 401 Unauthorized =
-If you get this error, try the following solutions:
+<p>If you get this error, try the following solutions:
 1. Ensure that access to your site content is not blocked by HTTP Basic Authentication (http://en.wikipedia.org/wiki/Basic_access_authentication). HTTP Basic Authentication is a protection method which requests additional login and password to access webpage or other resource.
-2. Make sure that your website content is available on the Internet during the Migration process.
+2. Make sure that your website content is available on the Internet during the Migration process.</p>
 
 = Your server responds with 403 Forbidden =
 This error means that access to certain files or folders is limited. Find below the possible solutions:
 1. Your firewall may be causing this by blocking access to the server for our IP addresses. Please, contact your hosting provider and ask them to add the following IPs to the white-list:
-5.58.76.130
-204.62.12.42
-204.62.12.24
-88.214.254.75
-93.77.238.130
-Port 80
-This is done to enable data exchange between your websites. After the migration is complete, you’ll be able to remove our IPs from the white list.
-2. Check the access permissions. For ‘cms2cms’ folder specify the file permissions 755. For files in the ‘cms2cms’ folder specify permissions 644.
-3. Find out whether there are access restrictions for bridge file. Usually, restrictions are specified in .htaccess file. Contact your system administrator for details.
+<ul>
+<li>5.58.76.130</li>
+<li>204.62.12.42</li>
+<li>204.62.12.24</li>
+<li>88.214.254.75</li>
+<li>93.77.238.130</li>
+<li>Port 80</li>
+</ul>
+
+<p>This is done to enable data exchange between your websites. After the migration is complete, you’ll be able to remove our IPs from the white list.
+Check the access permissions. For ‘cms2cms’ folder specify the file permissions 755. For files in the ‘cms2cms’ folder specify permissions 644.
+Find out whether there are access restrictions for bridge file. Usually, restrictions are specified in .htaccess file. Contact your system administrator for details.</p>
 
 = Your server responds with 413 Request Entity Too Large =
-It indicates that the request is too large for your server. These are possible solutions:
+<p>It indicates that the request is too large for your server. These are possible solutions:
 Increase values for the following parameters: ‘memory_limit’ and ‘post_max_size’ in PHP configuration.
-If the module suhosin for PHP is installed on the server, increase the parameter ‘suhosin.post.max_value_length’. Usually, the value of 32 Mb is enough.
+If the module suhosin for PHP is installed on the server, increase the parameter ‘suhosin.post.max_value_length’. Usually, the value of 32 Mb is enough.</p>
 
 = Your server responds with 500 Server Error =
-Incorrect permissions for bridge folder are the most common reason of this internal server error.
-1. for \'cms2cms\' folder, specify the file permissions 755
-2. for \'index.php\', \'bridge.php\' and \'key.php\' files in \'cms2cms\' folder, specify the permissions 644
-3. If it won’t help, contact your system administrator who can provide you with server logs access for further error detection. You can also request technical assistance from your hosting provider.
+<p>Incorrect permissions for bridge folder are the most common reason of this internal server error.
+<li>for \'cms2cms\' folder, specify the file permissions 755</li>
+<li>for \'index.php\', \'bridge.php\' and \'key.php\' files in \'cms2cms\' folder, specify the permissions 644</li>
+If it won’t help, contact your system administrator who can provide you with server logs access for further error detection. You can also request technical assistance from your hosting provider.</p>
 
 = Failed to connect to host / Operation timed out / Nothing was returned from the server / The connection to your server has timed out =
-Each of these errors indicates that your website cannot be reached online. Solutions are as follows:
-1. Make sure your site is available online at the moment.
-2. It’s possible that your firewall blocks certain IP requests. Contact your system administrator or hosting provider support for details about this issue.
+<p>Each of these errors indicates that your website cannot be reached online. Solutions are as follows:
+Make sure your site is available online at the moment.
+It’s possible that your firewall blocks certain IP requests. Contact your system administrator or hosting provider support for details about this issue.</p>
 
 = POST Method Not Allowed =
 This is a server error. Contact your system administrator or your hosting provider support to have POST method allowed for your server.
@@ -123,7 +118,7 @@ To fix it, you should either download the bridge again under the account you are
 Сontact us at support@cms2cms.com.
 
 = An unknown error occurred =
-Сontact us at support@cms2cms.com
+Сontact us at support@cms2cms.com.
 
 == Screenshots ==
 
