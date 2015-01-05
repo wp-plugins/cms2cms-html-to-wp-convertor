@@ -1,6 +1,6 @@
 <?php
 /**
- * This script is necessary setup automated data exchange
+ * This script is necessary setup automated data exchange 
  * between Your/Merchant site and CMS2CMS.
  *
  * Please carefully follow steps below.
@@ -12,7 +12,7 @@
  *
  * Installation Instructions
  * ===========================================================================
- * 1. Extract files from archive and upload "cms2cms" folder into your site
+ * 1. Extract files from archive and upload "cms2cms" folder into your site 
  *    root catalog via FTP.
  *    Example how to upload: "http://www.yourstore.com/cms2cms"
  * 2. Make "cms2cms" folder writable (set the 777 permissions, "write for all")
@@ -26,7 +26,7 @@
  * 3. Send email (support@cms2cms.com) to CMS2CMS support requesting help.
  * 4. Add feedback on http://cms2cms.betaeasy.com/
  *
- * Most likely you uploaded this script into wrong folder
+ * Most likely you uploaded this script into wrong folder 
  * or misstyped the site address.
  *
  * DISCLAIMER
@@ -662,7 +662,7 @@ class Bridge_Response
         $obj->sendData($data);
     }
 
-    static function getFileHandler()
+   static function getFileHandler()
     {
         $obj = Bridge_Response::getInstance();
 
@@ -671,7 +671,7 @@ class Bridge_Response
         return $obj->hFile;
     }
 
-    static  function disable()
+   static  function disable()
     {
         Bridge_Response::getInstance('Bridge_Response_Null');
     }
@@ -724,7 +724,7 @@ class Bridge_Includer {
             $result = !empty($f);
         }
         */
-
+        
         if (! file_exists($fileName)){
             return false;
         }
@@ -884,7 +884,7 @@ class Bridge_Includer {
             }
             $content = str_replace($match, '//' . $match . "\n", $content);
         }
-
+        
         return $content;
     }
 
@@ -2355,7 +2355,7 @@ class Bridge_Module_Dump
         $firstRow = array_pop($rows);
         $statement = array_pop($firstRow);
 
-        $this->response->sendNode('statement', base64_encode($statement));
+        $this->response->sendNode('statement', $this->encode($statement));
     }
 
     protected function runExecCreate($params)
@@ -2368,8 +2368,8 @@ class Bridge_Module_Dump
             throw new Exception('Table param is missing');
         }
 
-        $dropSql = base64_decode($params['dropStatement']);
-        $createSql = base64_decode($params['createStatement']);
+        $dropSql = base64_decode($this->decode($params['dropStatement']));
+        $createSql = base64_decode($this->decode($params['createStatement']));
 
         try {
             $this->db->execute($createSql);
@@ -2486,7 +2486,7 @@ class Bridge_Module_Dump
 
         $errors = array();
         foreach ($rows as $index => $row) {
-            $data = unserialize(base64_decode($row));
+            $data = unserialize(base64_decode($this->decode($row)));
             $sql = $this->getInsertQuery($table, $data);
 
             try {
@@ -2614,6 +2614,15 @@ class Bridge_Module_Dump
         $this->response->closeNode();
     }
 
+    public  function decode($value)
+    {
+        return base64_decode($value);
+    }
+
+    public  function encode($value)
+    {
+        return base64_encode($value);
+    }
 }
 
 ?><?php
@@ -3706,9 +3715,9 @@ class Bridge_Module_Cms_IPBoard_IPBoard extends Bridge_Module_Cms_Abstract
             $dbAdapter = Bridge_Db::getAdapter();
             $dbAdapter->connect($INFO['sql_host'], $INFO['sql_user'], $INFO['sql_pass'], $INFO['sql_database']);
             $config['version'] = $dbAdapter->fetchOne(
-                'SELECT `app_version` from ' . $INFO['sql_tbl_prefix'] . 'core_applications
+                    'SELECT `app_version` from ' . $INFO['sql_tbl_prefix'] . 'core_applications
                  WHERE `app_id` = \'1\''
-            );
+                );
 
         }
 
