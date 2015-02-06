@@ -2647,6 +2647,186 @@ class Bridge_Module_FileList
 }
 
 ?><?php
+class Bridge_Module_Install
+{
+    const PLUGIN_DIRECTORY_PATH = "/wp-content/plugins/";
+    const DOWNLOADED_ZIPNAME = "TmpFile.zip";
+
+    var $plugin = '';
+
+    function Bridge_Module_Install()
+    {
+        $this->plugin = ucfirst(htmlentities($_REQUEST["params"]["plugin"]));
+    }
+
+    function getModuleClass()
+    {
+        $moduleClassName = 'Bridge_Module_Install_' . $this->plugin;
+
+        $plugin = new $moduleClassName();
+
+        return $plugin;
+    }
+
+    function run()
+    {
+        $plugin = $this->getModuleClass();
+        $config = $plugin->getPluginConfig();
+
+        if (!$plugin->copyFiles($config)) {
+            Bridge_Exception::ex('We can not copy plugin files', 'install error');
+        }
+
+        if (!$this->unzip()) {
+            Bridge_Exception::ex('We can not extract plugin files', 'install error');
+        }
+
+        if (!$this->checkIsUnZipped($config)) {
+            Bridge_Exception::ex('Plugin not found', 'install error');
+        }
+
+        $result = unserialize($this->getWordPressPluginList());
+        $this->checkPluginIsAlreadyInstall($result, $config);
+        $result[] = $config["pluginName"];
+
+        $plugin->activatePlugin($result);
+
+        /**@var $response Bridge_Response_Memory */
+        $response = Bridge_Response::getInstance('Bridge_Response_Memory');
+        $response->sendNode("results", "Plugin install");
+    }
+
+    function copyFiles($config)
+    {
+        $result = false;
+        try {
+            $path = $this->getPath() . self::PLUGIN_DIRECTORY_PATH;
+            $result = file_put_contents($path . self::DOWNLOADED_ZIPNAME, fopen($config["downloadLink"], 'r'));
+        } catch (Exception $e) {
+            Bridge_Exception::ex('We can not copy plugin files', 'install error');
+        }
+
+        return $result;
+    }
+
+    function unzip()
+    {
+        if (!extension_loaded('zip')) {
+            Bridge_Exception::ex('Zip archive is not loaded in php', 'install error');
+        }
+
+        $path = $this->getPath() . self::PLUGIN_DIRECTORY_PATH . self::DOWNLOADED_ZIPNAME;
+        $zip = new ZipArchive;
+        $res = $zip->open($path);
+
+        if ($res === TRUE) {
+            $zip->extractTo($this->getPath() . self::PLUGIN_DIRECTORY_PATH);
+            $zip->close();
+        } else {
+            Bridge_Exception::ex('Can not find plugin to extract', 'install error');
+        }
+
+        unlink($this->getPath() . self::PLUGIN_DIRECTORY_PATH . self::DOWNLOADED_ZIPNAME);
+
+        return true;
+    }
+
+    function checkIsUnZipped($config)
+    {
+        $listOfPlugins = scandir($this->getPath() . self::PLUGIN_DIRECTORY_PATH);
+        $isPluginUnZipped = in_array($config["pluginDirName"], $listOfPlugins);
+
+        return $isPluginUnZipped;
+    }
+
+    function getWordPressPluginList()
+    {
+        $db = Bridge_Db::getDbAdapter();
+        $sql = sprintf(
+            '
+                SELECT `option_value`
+                FROM `%s` WHERE `option_name` = "active_plugins"
+            ',
+            $this->prefixTable('options')
+        );
+
+        return $db->fetchOne($sql, 'name');
+    }
+
+    function checkPluginIsAlreadyInstall($modules, $config)
+    {
+        if (in_array($config["pluginName"], $modules)) {
+            Bridge_Exception::ex('Plugin is already installed', 'install error');
+        }
+    }
+
+    function activatePlugin($value)
+    {
+        $db = Bridge_Db::getDbAdapter();
+        $value = serialize($value);
+
+        $sql = sprintf(
+            "
+                UPDATE `%s`
+                SET `option_value` = '%s'
+                WHERE `option_name` = 'active_plugins'
+            ",
+            $this->prefixTable('options'), $value
+        );
+
+        return $db->execute($sql);
+    }
+
+    function getConfig()
+    {
+        return $config = Bridge_Loader::getInstance()->getCmsInstance()->getConfig();
+    }
+
+    function getPath()
+    {
+        return Bridge_Loader::getInstance()->getCurrentPath();
+    }
+
+    protected function getTablePrefix($tableName)
+    {
+        $config = $this->getConfig();
+        $prefix = '';
+        if (isset($config['db']['dbprefix'])) {
+            $prefix = $config['db']['dbprefix'];
+        }
+
+        if (is_array($prefix)) {
+            if (isset($prefix[$tableName])) {
+                $prefix = $prefix[$tableName];
+            } else {
+                $prefix = '';
+            }
+        }
+
+        return $prefix;
+    }
+
+    protected function prefixTable($tableName)
+    {
+        $prefix = $this->getTablePrefix($tableName);
+
+        return $prefix . $tableName;
+    }
+}
+?><?php
+
+class Bridge_Module_Install_BbPress extends Bridge_Module_Install
+{
+    function getPluginConfig()
+    {
+        return array(
+            "downloadLink" => "https://downloads.wordpress.org/plugin/bbpress.2.5.4.zip",
+            "pluginName" => "bbpress/bbpress.php",
+            "pluginDirName" => "bbpress",
+        );
+    }
+}
+?><?php
 abstract class Bridge_Module_Cms_Abstract
 {
     protected $config;
