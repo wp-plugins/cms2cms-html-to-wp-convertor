@@ -20,6 +20,16 @@ This plugin will help to convert your static HTML website to WordPress in a matt
 * *There is Free Demo available (migration of limited number of pages).*
 * *Full Migration starts from $9.*
 
+= Currently Supported Entities that can be migrated from HTML to WordPress: =
+* *pages*
+* *content images*
+* *internal links*
+
+= Additional Migration Options provided by CMS2CMS service are: =
+- clear WordPress data before migration
+- 301 redirects from old URLs to new URLs
+- forms
+
 
 = Features of Automated Migration with CMS2CMS  =
 * **simple** - no need for coding skills to complete it.
